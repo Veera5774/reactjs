@@ -2,7 +2,8 @@ import React from 'react';
 
 class App extends React.Component {
   state = {
-    curText: []
+    curText: [],
+    filter: ""
   }
 
   //Update input value
@@ -32,14 +33,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="custom-table">
-        <input type="text" onChange={this.updateInput} />
-        <button onClick={this.saveInput}>Add</button>
+        <div className="add-content">
+          <input type="text" onChange={this.updateInput} />
+          <button className="add-btn" onClick={this.saveInput}>Add</button>
+        </div>
+        <div className="search-content">
+          <input type="text" onChange={this.searchInput} />
+          <button className="search-btn" onClick={this.filterInput}>Filter</button>
+        </div>
         <table>
           <thead>
             <tr>
-              <td>ID</td>
-              <td>Name</td>
-              <td>Action</td>
+              <td className="tlid">ID</td>
+              <td className="tlname">Name</td>
+              <td className="tlaction">Action</td>
             </tr>
           </thead>
           <tbody>
