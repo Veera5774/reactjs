@@ -48,3 +48,7 @@ code {
   border: 1px solid black;
 }
 
+.custom-table .highlight {
+  background-color: red;
+}
+

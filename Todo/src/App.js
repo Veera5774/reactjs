@@ -30,6 +30,11 @@ class App extends React.Component {
     this.setState({curText:nameArr})
   };
 
+  //Filter Item
+  filterInput = (event) => {
+    this.setState({search:event.target.value});
+  }
+
   render() {
     return (
       <div className="custom-table">
@@ -38,8 +43,7 @@ class App extends React.Component {
           <button className="add-btn" onClick={this.saveInput}>Add</button>
         </div>
         <div className="search-content">
-          <input type="text" onChange={this.searchInput} />
-          <button className="search-btn" onClick={this.filterInput}>Filter</button>
+          <input type="text" placeholder="Highlight on here..." onChange={this.filterInput} />
         </div>
         <table>
           <thead>
@@ -51,17 +55,18 @@ class App extends React.Component {
           </thead>
           <tbody>
           {this.state.curText.map((items, i) => {
-            return (
-            <tr key={i+1}>
-              <td>{i+1}</td>
-              <td>
-                {items}
-              </td>
-              <td>
-                <button onClick={() => this.handleDelete(i)}>Delete</button> 
-              </td>
-            </tr>
-            )
+            if(this.state.search === items) {
+              return <tr key={i} className="highlight">
+                <td>{i+1}</td><td>{items}</td>
+                <td><button onClick={() => this.handleDelete(i)}>Delete</button></td>
+              </tr>
+            } else {
+              return <tr key={i+1}>
+                <td>{i+1}</td>
+                <td>{items}</td>
+                <td><button onClick={() => this.handleDelete(i)}>Delete</button></td>
+              </tr>
+            }
           })}
           </tbody>
         </table>
