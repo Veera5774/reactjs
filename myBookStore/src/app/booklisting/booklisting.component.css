@@ -1,0 +1,50 @@
+.book-list-container {
+  width: 90%;
+  margin-left: 3em;
+  margin-top: 1em;
+}
+.book-list-container h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.book-list-container .col-md-4 .book-card {
+  width: 90%;
+  margin: 1em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #d4d4d4;
+}
+.book-list-container .col-md-4 .book-img img{
+  width: 300px;
+  height: 350px;
+}
+.book-list-container .col-md-4 .book-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000;
+}
+.book-list-container .col-md-4 .book-desc {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #000;
+}
+.book-list-container .col-md-4 .book-price {
+  margin-top: 5px;
+  color: #000;
+}
+.book-list-container .col-md-4 .book-price .price-label {
+  font-weight: bold;
+}
+.book-list-container .col-md-4 .book-add-cart {
+  margin-top: 5px;
+}
+.book-list-container .col-md-4 .book-add-cart .cart-btn {
+  color: #000;
+}
+.book-list-container .col-md-4 .book-add-cart .cart-btn:hover {
+  cursor: pointer;
+}
